@@ -1,0 +1,23 @@
+Package: pmtiles
+Title: Create PMTiles with Tippecanoe in R
+Version: 0.1.0
+Authors@R: 
+    person("Zhao", "Wang", "wangzhao0217@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-4054-0533")),
+    person("Robin", "Lovelace", "rob00x@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-5679-6536"))
+Description: An R package that provides a simple interface to create PMTiles using the 
+    Tippecanoe command-line tool. PMTiles is a file format for efficiently storing map 
+    tiles as a single file.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    glue
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3 
+Depends: 
+    R (>= 2.10)
+LazyData: true

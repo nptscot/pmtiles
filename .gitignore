@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+.DS_Store
+*.Rproj
+inst/doc
+/doc/
+/Meta/ 
+.geojson
+pmtiles/
