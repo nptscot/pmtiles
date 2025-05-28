@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/nptscot/pmtiles/workflows/R-CMD-check/badge.svg)](https://github.com/nptscot/pmtiles/actions)
+[![R-CMD-check](https://github.com/nptscot/pmtiles/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nptscot/pmtiles/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The `pmtiles` package provides a simple interface to create PMTiles using the Tippecanoe command-line tool. PMTiles is a file format for efficiently storing map tiles as a single file.

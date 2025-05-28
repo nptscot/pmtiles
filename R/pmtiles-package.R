@@ -18,6 +18,5 @@
 #' This package requires Tippecanoe to be installed on your system.
 #' See \url{https://github.com/felt/tippecanoe} for installation instructions.
 #'
-#' @docType package
 #' @name pmtiles-package
 NULL 
