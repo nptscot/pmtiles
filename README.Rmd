@@ -61,35 +61,23 @@ The simplest way to create PMTiles is to use the `pmtiles()` function, after loa
 ```{r, eval=FALSE}
 # Create PMTiles from a GeoJSON file
 pmtiles("your_file.geojson")
+
+# Create PMTiles from a GeoPackage file
+pmtiles("your_file.gpkg")
+
+# Create PMTiles from an sf object
+pmtiles(rnet_sf)
 ```
 
 This will create a PMTiles file in the `./pmtiles` directory with sensible defaults.
 
 ## Working with the Included Dataset
 
-The package includes an example dataset for Edinburgh:
-
-```{r}
-# Load the dataset
-data(edinburgh_centre)
-
-# Check the structure
-class(edinburgh_centre)
-
-# See the first few features
-head(edinburgh_centre[, 1:2])
-```
-
 To create PMTiles from this dataset:
 
 ```{r, eval=FALSE}
-# Create a temporary GeoJSON file
-temp_geojson = tempfile(fileext = ".geojson")
-sf::st_write(edinburgh_centre, temp_geojson, delete_dsn = TRUE)
-
-# Create PMTiles
 pmtiles(
-  input_file = temp_geojson,
+  input_file = edinburgh_centre,
   output_name = "edinburgh_example",
   attribution = "City of Edinburgh | pmtiles R package"
 )
@@ -102,8 +90,8 @@ For more control over the PMTiles creation process, use the `create_pmtiles()` f
 ```{r, eval=FALSE}
 # Create PMTiles with custom parameters
 create_pmtiles(
-  input_file = temp_geojson,
-  output_folder = "output/directory",
+  input_file = "your_file.geojson",
+  output_folder = "output",
   output_name = "my_tiles",
   layer_name = "my_layer",
   attribution = "My Organization",
