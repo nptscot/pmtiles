@@ -55,11 +55,9 @@ is_tippecanoe_installed()
 
 ## Quick Start
 
-The simplest way to create PMTiles is to use the `pmtiles()` function:
+The simplest way to create PMTiles is to use the `pmtiles()` function, after loading the package:
 
 ```{r, eval=FALSE}
-library(pmtiles)
-
 # Create PMTiles from a GeoJSON file
 pmtiles("your_file.geojson")
 ```
@@ -101,11 +99,9 @@ pmtiles(
 For more control over the PMTiles creation process, use the `create_pmtiles()` function:
 
 ```{r, eval=FALSE}
-library(pmtiles)
-
 # Create PMTiles with custom parameters
 create_pmtiles(
-  input_file = "path/to/your/data.geojson",
+  input_file = temp_geojson,
   output_folder = "output/directory",
   output_name = "my_tiles",
   layer_name = "my_layer",
