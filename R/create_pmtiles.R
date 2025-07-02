@@ -14,6 +14,7 @@
 #' @param buffer Buffer size in pixels (default: 5)
 #' @param simplification Simplification factor (default: NULL)
 #' @param force Whether to overwrite existing files (default: TRUE)
+#' @param order_by Variable name to order features by (default: NULL)
 #' @param extra_args Additional arguments to pass to Tippecanoe (default: NULL)
 #'
 #' @return The exit code of the Tippecanoe command
@@ -22,6 +23,10 @@
 #' @examples
 #' \dontrun{
 #' create_pmtiles("path/to/input.geojson", "path/to/output", "my_layer")
+#' 
+#' # Order by a specific variable
+#' create_pmtiles("path/to/input.geojson", "path/to/output", "my_layer", 
+#'                order_by = "all_fastest_bicycle_go_dutch")
 #' }
 create_pmtiles = function(input_file, 
                           output_folder,
@@ -35,6 +40,7 @@ create_pmtiles = function(input_file,
                           buffer = 5,
                           simplification = NULL,
                           force = TRUE,
+                          order_by = NULL,
                           extra_args = NULL) {
   
   # Check if Tippecanoe is installed
@@ -125,6 +131,11 @@ create_pmtiles = function(input_file,
   # Add force option
   if (force) {
     cmd_parts <- c(cmd_parts, "--force")
+  }
+  
+  # Add order by if provided
+  if (!is.null(order_by)) {
+    cmd_parts <- c(cmd_parts, "--order-by", shQuote(order_by))
   }
   
   # Add extra arguments if provided
