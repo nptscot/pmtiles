@@ -120,6 +120,14 @@ create_pmtiles(
   simplification = 10,
   force = TRUE
 )
+
+# Order features by a specific variable
+create_pmtiles(
+  input_file = "path/to/your/data.geojson",
+  output_folder = "output/directory",
+  output_name = "my_tiles",
+  order_by = "all_fastest_bicycle_go_dutch"
+)
 ```
 
 ## License
